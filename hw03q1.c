@@ -144,6 +144,16 @@ void decryptStrings(char strings[NUM_STRINGS][STRING_LENGTH], int key)
 {
 	char *p = &strings[0][0];
 	// enter code here
+	for(int i = 0; i < NUM_STRINGS; i++){
+		while(*p){
+			*p = *p - key;
+			p++;
+		}
+		p++;
+	}
+	
+	p = &strings[0][0];
+	reverseStrings(p);
 
 }
 
