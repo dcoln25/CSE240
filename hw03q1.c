@@ -102,6 +102,11 @@ void reverseStrings(char strings[NUM_STRINGS][STRING_LENGTH])
 	char *p = &strings[0][0];
 	// enter code here
 
+	for (int i = 0 ; i < NUM_STRINGS; i++){
+
+		reverseOneString(p);
+		p = p + STRING_LENGTH;
+	}
 }
 
 // Problem 5: encryptStrings (5 points)
