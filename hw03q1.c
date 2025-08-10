@@ -170,6 +170,16 @@ int isPalindrome(char s[STRING_LENGTH])
 	int palindrome = 1;			// edit if needed
 	// enter code here
 
+	char *q = &s[strlen(s) - 1]; // pointer to end of string
+	while(p < q){
+
+		if(*p != *q){
+			palindrome = 0;
+		}
+		p++;
+		q--;
+	}
+
 	return palindrome;
 }
 
