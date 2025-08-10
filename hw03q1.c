@@ -122,6 +122,16 @@ void encryptStrings(char strings[NUM_STRINGS][STRING_LENGTH], int key)
 	char *p = &strings[0][0];
 	// enter code here
 
+	reverseStrings(p);
+
+	for(int i = 0; i < NUM_STRINGS; i++){
+		while(*p){
+			*p = *p + key;
+			p++;
+		}
+		p++;
+	}
+
 }
 // Problem 6: decryptStrings (5 points)
 // HINT: This should be very similiar to the encryption function defined above in encryptStrings().
