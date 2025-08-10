@@ -77,9 +77,18 @@ char* reverseOneString(char s[STRING_LENGTH])
 {
 	char temp;					// not necessary to use this variable
 	char *p = &s[0];			// pointer to start of string
+	char *q = &s[STRING_LENGTH - 1]; // pointer to end of string
 	// enter code here
-	
 
+	while(p < q){
+		temp = *p;
+		*p = *q;
+		*q = temp; 
+
+		q--; 
+		p++;
+	}
+	p = &s[0];
 
 	return p;
 }
