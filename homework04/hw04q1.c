@@ -130,7 +130,36 @@ void executeAction(char c)
 int addSort(char* studentName_input, char* major_input, char* schoolYear_input, unsigned int studentID_input)
 {
 	struct studentRecord studentTemp;	// needed for swapping structs. Not absolutely necessary to use.
-	return 0;			// edit this line as needed
+
+	if(count == MAX_STUDENTS){
+		return 2;
+	}
+
+	for(int i = 0; i < count; i++){
+		if(strcmp(list[i].studentName, studentName_input) == 0){
+			return 0;
+		}
+	}
+
+
+	strcpy(list[count].studentName, studentName_input);
+	list[count].studentID = studentID_input;
+	strcpy(list[count].major, major_input);
+	strcpy(list[count].schoolYear, schoolYear_input);
+	count++;
+
+	for(int i = 1; i < count; i++){
+		studentTemp = list[i];
+		int j = i - 1;
+
+		while(j >= 0 && strcmp(list[j].studentName, studentTemp.studentName) > 0){
+			list[j + 1] = list[j];
+			j = j - 1;
+		}
+		list[j + 1] = studentTemp;
+	}
+
+	return 1;			// edit this line as needed
 }
 
 
