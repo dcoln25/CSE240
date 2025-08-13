@@ -141,7 +141,6 @@ int addSort(char* studentName_input, char* major_input, char* schoolYear_input, 
 		}
 	}
 
-
 	strcpy(list[count].studentName, studentName_input);
 	list[count].studentID = studentID_input;
 	strcpy(list[count].major, major_input);
